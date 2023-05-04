@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCACL_PROCESS_INTERFACE</CLSNAME>
+    <LANGU>P</LANGU>
+    <DESCRIPT>Processa informações de Interface</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>ADD_BO_DEPENDENT</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Adicona infor da BO dependente (específica cada interface)</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>ADD_DATA</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Cria registro de dados da interface</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>ADD_DATA_BO_DEPENDENT</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Cria dados de referência e dados de modificação</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>ADD_MESSAGES</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Cria registro de mensagens da interface</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>ASSIGN_DATA</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Associa dados</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>ASSIGN_DATA_PROCESS</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Associa dados</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CHECK_INSERT_KEY</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Insere chave em tabela interna</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Constructor</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CONV_MESSAGES</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Converte mensagens daestrutura da BO para estrutura BAPIRET2</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CREATE_INTEGRATION</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Cria dados básicos integração</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CREATE_REF_DATA</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Cria data referencia</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CREATE_REF_DATA_K</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Cria data referencia estrutura K</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CREATE_REF_TO_DATA</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Cria com referência</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CREATE_REGISTER</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Cria registro de interface</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CREATE_REGISTER_MULT</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Cria multiplos</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>C_STAT_ELIMINADO</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Status da Integração</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>C_STAT_ERRO_INT</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Status da Integração</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>C_STAT_INICIAL</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Status da Integração</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>C_STAT_INTEGRADO</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Status da Integração</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GET_INT_DATA</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Busca registro de mensagens de interface</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GET_MESSAGES</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Busca registro de mensagens de interface</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GET_MESSAGES_MULT</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Busca registro de mensagens de interface</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GET_STATUS_INFO</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Busca texto do status</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>MESSAGES_EXEC</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Processa mensagem execução</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>MODIFY</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Guarda modificações</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>NEXT_NUMBER</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Numero sequencial Integração</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>SAVE</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Salva</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>SET_MESSAGES</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Set mensagens</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>SET_STATUS</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Set status</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

@@ -1,0 +1,70 @@
+@Metadata.layer: #CORE
+@UI: { headerInfo: { typeName: 'Relatório de Horas',
+                     typeNamePlural: 'Relatório de Horas',
+                     title: { type: #STANDARD, value: 'Guid' } } }
+annotate view ZC_CA_TIMESHEET
+    with 
+{
+  // ------------------------------------------------------
+  // Informações de cabeçalho
+  // ------------------------------------------------------
+  @UI.facet: [ { id:              'RelHoras',
+                 purpose:         #STANDARD,
+                 type:            #IDENTIFICATION_REFERENCE,
+                 label:           'Registros',
+                 position:        10 } ]
+    
+  // ------------------------------------------------------
+  // Informações de campos
+  // ------------------------------------------------------    
+    @UI.hidden: true
+    Guid;
+    
+    @UI: { lineItem:        [ { position: 10, label: 'Id' } ],
+           identification:  [ { position: 10, label: 'Id' } ] }    
+    Id;
+    @UI: { lineItem:        [ { position: 20, label: 'Contrato' } ],
+           identification:  [ { position: 20, label: 'Contrato' } ],
+           selectionField:  [ { position: 10 } ] }    
+    Contrato;
+    @UI: { lineItem:        [ { position: 30, label: 'Gestor do Contrato' } ],
+           identification:  [ { position: 30, label: 'Gestor do Contrato' } ],
+           selectionField:  [ { position: 20 } ] }    
+    GestorContrato;    
+    @UI: { lineItem:        [ { position: 40, label: 'Tipo de Hora' } ],
+           identification:  [ { position: 40, label: 'Tipo de Hora' } ],
+           selectionField:  [ { position: 30 } ] }    
+    TpHora;
+    @UI: { lineItem:        [ { position: 50, label: 'Equipe' } ],
+           identification:  [ { position: 50, label: 'Equipe' } ],
+           selectionField:  [ { position: 40 } ] }    
+    Equipe;
+    @UI: { lineItem:        [ { position: 60, label: 'Tarefa' } ],
+           identification:  [ { position: 60, label: 'Tarefa' } ],
+           selectionField:  [ { position: 50 } ] }     
+    Tarefa;
+    @UI: { lineItem:        [ { position: 70, label: 'Tipo de Tarefa' } ],
+           identification:  [ { position: 70, label: 'Tipo de Tarefa' } ],
+           selectionField:  [ { position: 60 } ] }    
+    TpTarefa;
+    @UI: { lineItem:        [ { position: 80, label: 'Usuário' } ],
+           identification:  [ { position: 80, label: 'Usuário' } ],
+           selectionField:  [ { position: 70 } ] }      
+    Usuario;
+    @UI: { lineItem:        [ { position: 90, label: 'Data Apropriação' } ],
+           identification:  [ { position: 90, label: 'Data Apropriação' } ],
+           selectionField:  [ { position: 80 } ] }
+    @Consumption.filter.selectionType: #INTERVAL     
+    DtApropriacao;
+    @UI: { lineItem:        [ { position: 100, label: 'Horas Aprovada' } ],
+           identification:  [ { position: 100, label: 'Horas Aprovada' } ] }    
+    HrAprovada;
+    @UI: { lineItem:        [ { position: 110, label: 'Horas Informada' } ],
+           identification:  [ { position: 110, label: 'Horas Informada' } ] }    
+    HrInformada;
+//    CreatedBy;
+//    CreatedAt;
+//    LastChangedBy;
+//    LastChangedAt;
+//    LocalLastChangedAt;    
+}

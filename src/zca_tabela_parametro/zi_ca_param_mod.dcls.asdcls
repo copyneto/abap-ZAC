@@ -1,0 +1,10 @@
+@EndUserText.label: 'Acess Control - Módulo'
+@MappingRole: true
+define role ZI_CA_PARAM_MOD {
+    grant
+        select
+            on
+                ZI_CA_PARAM_MOD
+                where ( Modulo ) = aspect pfcg_auth(Z_PARAM, Z_MODULO );                 
+                        
+}

@@ -1,0 +1,38 @@
+managed; // implementation in class zbp_i_ca_timesheet unique;
+
+define behavior for ZI_CA_TIMESHEET alias Timesheet
+persistent table ztca_timesheet
+lock master
+//authorization master ( instance )
+etag master LastChangedAt
+{
+  create;
+  update;
+  delete;
+
+  field ( readonly, numbering : managed ) Guid;
+  field ( readonly  ) LastChangedAt, LastChangedBy, CreatedAt, CreatedBy, LocalLastChangedAt;
+  field ( mandatory ) Contrato, GestorContrato, TpHora, Equipe, Tarefa, TpTarefa, Usuario, DtApropriacao, HrAprovada, HrInformada;
+
+  mapping for ztca_timesheet
+  {
+    Guid = guid;
+    Id = id;
+    Contrato = contrato;
+    GestorContrato = ge_contrato;
+    TpHora = tp_hora;
+    Equipe = equipe;
+    Tarefa = tarefa;
+    TpTarefa = tp_tarefa;
+    Usuario = usuario;
+    DtApropriacao = dt_apro;
+    HrAprovada = hr_apro;
+    HrInformada = hr_inf;
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+  }
+
+}

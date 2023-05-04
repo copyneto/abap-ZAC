@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service definition para ZI_CA_PRINT'
+define service ZUI_CA_PRINTER {
+  expose ZI_CA_PRINT as Printer;
+}

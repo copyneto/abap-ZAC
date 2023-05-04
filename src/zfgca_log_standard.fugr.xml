@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>Log Standard</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>LZFGCA_LOG_STANDARDTOP</SOBJ_NAME>
+    <SOBJ_NAME>SAPLZFGCA_LOG_STANDARD</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>ZFMCA_LOG_MSG_ADD</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Adiciona mensagem</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IS_LOG</PARAMETER>
+       <TYP>BAL_S_LOG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IS_MSG</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>BAPIRET2</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IT_MSGS</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>BAPIRET2_TAB</TYP>
+      </RSIMP>
+     </IMPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IS_LOG</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Log de aplicação: handle de um log</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IS_MSG</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Parâmetro de retorno</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_MSGS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Mensagens de erro</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

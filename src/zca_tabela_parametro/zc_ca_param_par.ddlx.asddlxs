@@ -1,0 +1,82 @@
+@Metadata.layer: #CORE
+
+@UI: {
+  headerInfo: {
+    typeName: 'Parâmetro',
+    typeNamePlural: 'Parâmetros',
+    title: {
+      type: #STANDARD,
+      label: 'Parâmetro',
+      value: 'Modulo'
+    },
+    description: {
+      value: 'ModuloDescricao'
+    }
+  }}
+annotate view ZC_CA_PARAM_PAR with
+{
+  @UI.facet: [
+               { id: 'DataDescricao',
+                 position: 60,
+                 targetQualifier: 'DataDescricao',
+                 purpose: #HEADER,
+                 type: #DATAPOINT_REFERENCE },
+
+               { label: 'Informações Gerais',
+                 id: 'GeneralInfo',
+                 type: #COLLECTION,
+                 position: 10 },
+
+               { purpose: #STANDARD,
+                 label: 'Chaves',
+                 position: 20,
+                 type: #IDENTIFICATION_REFERENCE,
+                 parentId: 'GeneralInfo' },
+
+               { purpose: #STANDARD,
+                 label: 'Geral',
+                 position: 10,
+                 type: #FIELDGROUP_REFERENCE,
+                 parentId: 'GeneralInfo',
+                 targetQualifier: 'Geral' },
+
+               { id:            'Valores',
+                 purpose:       #STANDARD,
+                 type:          #LINEITEM_REFERENCE,
+                 label:         'Valores',
+                 position:      20,
+                 targetElement: '_Valor'}]
+
+  @UI: { lineItem:        [ { position: 10,       hidden: true} ],
+         textArrangement: #TEXT_LAST }
+  Modulo;
+
+  @UI: { lineItem:        [ { position: 20, importance: #HIGH } ],
+         identification:  [ { position: 10 } ],
+         dataPoint: { qualifier: 'Chave1', title: 'Chave 1' }}
+  Chave1;
+
+  @UI: { lineItem:        [ { position: 30, importance: #HIGH } ],
+         identification:  [ { position: 20 } ],
+         dataPoint: { qualifier: 'Chave2', title: 'Chave 2' }}
+  Chave2;
+
+  @UI: { lineItem:        [ { position: 40, importance: #HIGH } ],
+         identification:  [ { position: 30 } ],
+         dataPoint: { qualifier: 'Chave3', title: 'Chave 3' }}
+  Chave3;
+
+  @UI: { lineItem:        [ { position: 70, importance: #HIGH } ],
+         fieldGroup:      [ { qualifier: 'Geral', position: 20 } ],
+         dataPoint: { qualifier: 'DataDescricao', title: 'Descrição' } }
+  Descricao;
+
+  @UI: { lineItem:        [ { position: 80, hidden: true } ],
+         fieldGroup:      [ { qualifier: 'Geral', position: 30 } ] }
+  LastChangedBy;
+
+  @UI: { lineItem:        [ { position: 90, hidden: true } ],
+         fieldGroup:      [ { qualifier: 'Geral', position: 40 } ] }
+  LocalLastChangedAt;
+
+}

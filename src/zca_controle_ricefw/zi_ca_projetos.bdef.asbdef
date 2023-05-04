@@ -1,0 +1,126 @@
+managed implementation in class zclca_projetos unique;
+
+define behavior for ZI_CA_PROJETOS alias Projetos
+persistent table ztca_projetos
+lock master
+authorization master ( instance )
+etag master LocalLastChangedAt
+{
+  create;
+  update;
+  delete;
+
+  field ( numbering : managed ) UuidProjeto;
+  field ( mandatory : create, readonly : update ) Cliente, Projeto;
+  field ( readonly : update ) UuidProjeto;
+
+  association _Ricefws { create; }
+
+  validation validaChave on save { create; update; }
+
+  mapping for ztca_projetos
+  {
+    uuidprojeto = uuid_projeto;
+    Cliente = cliente;
+    Projeto = projeto;
+    Descricao = descricao;
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+  }
+}
+
+define behavior for ZI_CA_RICEFWS alias Ricefws
+persistent table ztca_ricefws
+lock dependent by _Projetos
+authorization dependent by _Projetos
+etag master LocalLastChangedAt
+{
+  update;
+  delete;
+
+  field ( numbering : managed ) UuidRicefw;
+  field ( readonly : update ) UuidProjeto, UuidRicefw, IdRicefw, IdGap, Contador, IdModulo, IdCenario,
+  MetricaAbapIni, MetricaPoIni, MetricaFuncIni, MetricaAbapReal, MetricaPoReal, MetricaFuncReal;
+  field ( readonly : update ) CreatedBy, CreatedAt, LastChangedBy, LastChangedAt, LocalLastChangedAt;
+
+  association _Estimativas { create; }
+  association _Projetos;
+
+  mapping for ztca_ricefws
+  {
+    UuidRicefw = uuid_ricefw;
+    UuidProjeto = uuid_projeto;
+    IdRicefw = id_ricefw;
+    DescRicefw = desc_ricefw;
+    IdGap = id_gap;
+    Contador = Contador;
+    IdModulo = id_modulo;
+    IdCenario = id_cenario;
+    SistLegado = sist_legado;
+    TipoIni = tipo_ini;
+    ComplexABAPIni = complex_abap_ini;
+    ComplexPoIni = complex_po_ini;
+    TipoReal = tipo_real;
+    ComplexABAPReal = complex_abap_real;
+    ComplexPOReal = complex_po_real;
+    Sprint = sprint;
+    Status = status;
+    ABAPEstimIni = abap_estim_ini;
+    POEstimIni = po_estim_ini;
+    ABAPEstim = abap_estim;
+    POEstim = po_estim;
+    ABAPDesenv = abap_desenv;
+    PODesenv = po_desenv;
+    Observacoes = observacoes;
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+  }
+}
+
+define behavior for ZI_CA_ESTIMATIVAS alias Estimativas
+persistent table ztca_estimativa
+lock dependent by _Projetos
+authorization dependent by _Projetos
+etag master LocalLastChangedAt
+{
+  update;
+  delete;
+
+  field ( numbering : managed ) UuidEstimativa;
+  field ( readonly : update ) UuidProjeto, UuidRicefw, UuidEstimativa;
+
+  association _Projetos;
+  association _Ricefws;
+
+  mapping for ztca_estimativa
+  {
+    UuidEstimativa = uuid_estimativa;
+    UuidProjeto = uuid_projeto;
+    UuidRicefw = uuid_ricefw;
+    Sequencial = sequencial;
+    Atividade = atividade;
+    MetricaAbap = metrica_abap;
+    MetricaPo = metrica_po;
+    IdDesenvOk = desenv_ok;
+    Dependencia = dependencia;
+    DesenvAbapPo = desenv_abap_po;
+    DataInicio = data_inicio;
+    DataPrevista = data_prevista;
+    DataEntrega = data_entrega;
+    Pacote = pacote;
+    Evolucao = evolucao;
+    DesenvStatus = desenv_status;
+    Observacoes = observacoes;
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+  }
+}

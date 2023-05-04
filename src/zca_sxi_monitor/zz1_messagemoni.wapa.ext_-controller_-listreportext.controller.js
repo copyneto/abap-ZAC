@@ -1,0 +1,3 @@
+sap.ui.define(["sap/ui/model/Filter","sap/ui/comp/smartfilterbar/SmartFilterBar"],function(e,t){"use strict";return{onInit:function(){this.byId("ExecutionDe").setDateValue(new Date(Date.now()-36e5));this.byId("ExecutionAte").setDateValue(new Date((new Da+
+te).setHours(23,59,59,999)+1))},onBeforeRebindTableExtension:function(e){var t=e.getParameter("bindingParams");t.parameters=t.parameters||{};var a=this.byId("ExecutionDe").getDateValue();var i=this.byId("ExecutionAte").getDateValue();if(i==null)t.filters+
+.push(new sap.ui.model.Filter("ExecutionDate","BT",a,Date.now()));else t.filters.push(new sap.ui.model.Filter("ExecutionDate","BT",a,i))}}});                                                                                                                  

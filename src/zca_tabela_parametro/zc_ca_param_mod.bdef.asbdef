@@ -1,0 +1,31 @@
+projection;
+
+define behavior for ZC_CA_PARAM_MOD alias Modulo
+use etag
+{
+  use create;
+  use update;
+//  use delete;
+
+  use association _Parametros { create;}
+}
+
+define behavior for ZC_CA_PARAM_PAR alias Parametro
+use etag
+{
+  use update;
+  use delete;
+
+  use association _Valor { create; }
+  use association _Modulo;
+}
+
+define behavior for ZC_CA_PARAM_VAL alias Valor
+use etag
+{
+  use update;
+  use delete;
+
+  use association _Modulo;
+  use association _Parametros;
+}

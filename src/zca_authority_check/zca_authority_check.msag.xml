@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_MSAG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <T100A>
+    <ARBGB>ZCA_AUTHORITY_CHECK</ARBGB>
+    <MASTERLANG>P</MASTERLANG>
+    <STEXT>Mensagens para Authority Check</STEXT>
+   </T100A>
+   <T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZCA_AUTHORITY_CHECK</ARBGB>
+     <MSGNR>000</MSGNR>
+     <TEXT>&amp;1 &amp;2 &amp;3 &amp;4</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZCA_AUTHORITY_CHECK</ARBGB>
+     <MSGNR>001</MSGNR>
+     <TEXT>Sem autorização para criar registros!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZCA_AUTHORITY_CHECK</ARBGB>
+     <MSGNR>002</MSGNR>
+     <TEXT>Sem autorização para modificar registros!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZCA_AUTHORITY_CHECK</ARBGB>
+     <MSGNR>003</MSGNR>
+     <TEXT>Sem autorização para deletar registros!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZCA_AUTHORITY_CHECK</ARBGB>
+     <MSGNR>004</MSGNR>
+     <TEXT>Sem autorização para o range de Empresas!</TEXT>
+    </T100>
+   </T100>
+  </asx:values>
+ </asx:abap>
+</abapGit>

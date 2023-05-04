@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_MSAG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <T100A>
+    <ARBGB>ZCA_TAB_PARAM</ARBGB>
+    <MASTERLANG>P</MASTERLANG>
+    <STEXT>Textos Tabela de Parâmetros</STEXT>
+   </T100A>
+   <T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZCA_TAB_PARAM</ARBGB>
+     <MSGNR>001</MSGNR>
+     <TEXT>Sem autorização para criar objetos</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZCA_TAB_PARAM</ARBGB>
+     <MSGNR>002</MSGNR>
+     <TEXT>Parâmetro &amp; não foi cadastrado no Aplicativo Tabela de Parâmetros.</TEXT>
+    </T100>
+   </T100>
+  </asx:values>
+ </asx:abap>
+</abapGit>

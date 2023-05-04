@@ -1,0 +1,56 @@
+@Metadata.layer: #CORE
+@UI.headerInfo: { typeName: 'Projeto', typeNamePlural: 'Projetos',
+  title: { type: #STANDARD, value: 'Cliente' },
+  description: { type: #STANDARD, value: 'Projeto' } }
+annotate view ZC_CA_PROJETOS with
+{
+  @UI.facet: [
+  //      /* Header Facets */
+  //      { purpose: #HEADER,
+  //        position: 10,
+  //        type: #DATAPOINT_REFERENCE,
+  //        targetQualifier: 'StatusData' },
+
+    /* Standard Facets */ 
+    { label: 'Informações Gerais',
+      id: 'GeneralInfo',
+      type: #COLLECTION,
+      position: 10 },
+ 
+    // Grupo Geral 
+    { label: 'Geral',
+      purpose: #STANDARD,
+      position: 10,
+      type: #IDENTIFICATION_REFERENCE,
+      parentId: 'GeneralInfo' },
+
+      // Ricefws
+      { id: 'RICEFW',
+        label: 'Lista de RICEFW',
+        purpose: #STANDARD,
+        position: 20,
+        type: #LINEITEM_REFERENCE,
+        targetElement: '_Ricefws' }
+  ]
+
+  //UuidProjeto;
+  @UI: { selectionField: [{ position: 10 }],
+         lineItem:       [{ position: 10 }],
+         identification: [{ position: 10 }] }
+  Cliente;
+
+  @UI: { selectionField: [{ position: 20 }],
+         lineItem:       [{ position: 20 }],
+         identification: [{ position: 20 }]}
+  Projeto;
+
+  @UI: { identification: [{ position: 30 }]}
+  Descricao;
+
+  @UI.lineItem: [{position: 30 }]
+  CreatedBy;
+
+  @UI.lineItem: [{position: 40 }]
+  CreatedAt;
+
+}

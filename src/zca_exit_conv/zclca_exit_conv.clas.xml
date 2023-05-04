@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCLCA_EXIT_CONV</CLSNAME>
+    <LANGU>P</LANGU>
+    <DESCRIPT>Gerencia Exit de Conversão</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>GV_CONVEXIT</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Rotina de conversão</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>CONVERSION_EXIT_INPUT</CMPNAME>
+     <SCONAME>IV_CONVEXIT</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Rotina de conversão</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONVERSION_EXIT_OUTPUT</CMPNAME>
+     <SCONAME>IV_CONVEXIT</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Rotina de conversão</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_CONVEXIT</CMPNAME>
+     <SCONAME>EV_CONVEXIT</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Rotina de conversão</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SET_CONVEXIT</CMPNAME>
+     <SCONAME>IV_CONVEXIT</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Rotina de conversão</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

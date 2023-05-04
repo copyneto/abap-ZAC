@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_NROB" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <ATTRIBUTES>
+    <OBJECT>ZMOVORCMT</OBJECT>
+    <DOMLEN>BELNR</DOMLEN>
+    <PERCENTAGE>0.1</PERCENTAGE>
+    <BUFFER>X</BUFFER>
+    <NOIVBUFFER>00000010</NOIVBUFFER>
+    <CHANGED_AT>20220331163536.182438</CHANGED_AT>
+    <CHANGED_BY>DLIMA</CHANGED_BY>
+    <ENAME>DLIMA</ENAME>
+    <EDATE>2022-03-23</EDATE>
+    <ETIME>09:11:28</ETIME>
+   </ATTRIBUTES>
+   <TEXT>
+    <LANGU>P</LANGU>
+    <OBJECT>ZMOVORCMT</OBJECT>
+    <TXT>Movimentação de Verba Orçamentária</TXT>
+    <TXTSHORT>Movimt. Verba</TXTSHORT>
+    <ENAME>DLIMA</ENAME>
+    <EDATE>2022-03-23</EDATE>
+    <ETIME>09:11:28</ETIME>
+   </TEXT>
+  </asx:values>
+ </asx:abap>
+</abapGit>

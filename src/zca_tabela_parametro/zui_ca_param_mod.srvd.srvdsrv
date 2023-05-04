@@ -1,0 +1,6 @@
+@EndUserText.label: 'Serv. Def. Tabela de Parâmetros'
+define service ZUI_CA_PARAM_MOD {
+  expose ZC_CA_PARAM_MOD as Modulo;
+  expose ZC_CA_PARAM_PAR as Parametros;
+  expose ZC_CA_PARAM_VAL as Valor;
+}

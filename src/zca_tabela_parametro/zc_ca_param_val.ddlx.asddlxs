@@ -1,0 +1,93 @@
+@Metadata.layer: #CORE
+
+@UI: {
+  headerInfo: {
+    typeName: 'Valor',
+    typeNamePlural: 'Valores',
+    title: {
+      type: #STANDARD,
+      label: 'Parâmetro',
+      value: 'Modulo'
+    },
+    description: { 
+        value: 'ModuloDescricao'
+    }
+  }}
+annotate view ZC_CA_PARAM_VAL with
+{
+  @UI.facet: [  { label: 'Informações Gerais',
+                  id: 'GeneralInfo',
+                  type: #COLLECTION,
+                  position: 10 },
+                  
+                { purpose: #STANDARD,
+                  label: 'Geral',
+                  position: 30,
+                  type: #FIELDGROUP_REFERENCE,
+                  parentId: 'GeneralInfo',
+                  targetQualifier: 'Geral' },
+                  
+                { purpose: #STANDARD,
+                  label: 'Chaves',
+                  position: 10,
+                  type: #IDENTIFICATION_REFERENCE,
+                  parentId: 'GeneralInfo' },
+                  
+                { purpose: #STANDARD,
+                  label: 'Valores',
+                  position: 20,
+                  type: #FIELDGROUP_REFERENCE,
+                  parentId: 'GeneralInfo',
+                  targetQualifier: 'Valor' } ]
+
+  @UI: { lineItem:        [ { position: 10, importance: #LOW, hidden: true   } ],
+         fieldGroup:      [ { qualifier: 'Geral', position: 10 } ],
+         textArrangement: #TEXT_LAST }
+  Modulo;
+
+  @UI: { lineItem:        [ { position: 20, importance: #LOW, hidden: true } ],
+         identification:  [ { position: 10 } ]
+          }
+  Chave1;
+
+  @UI: { lineItem:        [ { position: 30, importance: #LOW, hidden: true } ],
+         identification:  [ { position: 20 } ] }
+  Chave2;
+
+  @UI: { lineItem:        [ { position: 40, importance: #LOW, hidden: true } ],
+         identification:  [ { position: 30 } ] }
+  Chave3;
+
+//  @UI: { lineItem:        [ { position: 50, importance: #LOW, hidden: true } ],
+//         identification:  [ { position: 40 } ] }
+//  Chave4;
+//
+//  @UI: { lineItem:        [ { position: 60, importance: #LOW, hidden: true } ],
+//         identification:  [ { position: 50 } ] }
+//  Chave5;
+
+  @UI: { lineItem:        [ { position: 70, importance: #HIGH } ],
+         fieldGroup:      [ { qualifier: 'Valor', position: 10 } ] }
+  Sign;
+
+  @UI: { lineItem:        [ { position: 80, importance: #HIGH } ],
+         fieldGroup:      [ { qualifier: 'Valor', position: 20 } ] }
+  Opt;
+
+  @UI: { lineItem:        [ { position: 90, importance: #HIGH } ],
+         fieldGroup:      [ { qualifier: 'Valor', position: 30 } ] }
+  Low;
+
+  @UI: { lineItem:        [ { position: 100, importance: #HIGH } ],
+         fieldGroup:      [ { qualifier: 'Valor', position: 40 } ] }
+  High;
+
+  @UI: { lineItem:        [ { position: 110, importance: #LOW, hidden: true } ],
+         fieldGroup:      [ { qualifier: 'Geral', position: 20 } ] }
+  LastChangedBy;
+
+  @UI: { lineItem:        [ { position: 120, importance: #LOW, hidden: true } ],
+         fieldGroup:      [ { qualifier: 'Geral', position: 30 } ] }
+  LocalLastChangedAt;
+
+}

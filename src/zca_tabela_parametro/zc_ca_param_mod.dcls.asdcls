@@ -1,0 +1,11 @@
+@EndUserText.label: 'Access Control - Módulo Projection View'
+@MappingRole: true
+define role ZC_CA_PARAM_MOD {
+    grant
+        select
+            on
+                ZC_CA_PARAM_MOD
+                    where
+                        inheriting conditions from entity ZI_CA_PARAM_MOD;
+                        
+}

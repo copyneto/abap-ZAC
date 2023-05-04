@@ -1,0 +1,6 @@
+@EndUserText.label: 'Projetos'
+define service ZUI_PROJETOS {
+  expose ZC_CA_PROJETOS;
+  expose ZC_CA_RICEFWS;
+  expose ZC_CA_ESTIMATIVAS;
+}

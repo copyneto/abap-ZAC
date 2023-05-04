@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCLCA_CREATE_SALESORDER</CLSNAME>
+    <LANGU>P</LANGU>
+    <DESCRIPT>Criar Ordem de Venda</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>GS_DADOS</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Dados Cabeçalho - Criar Pedido</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GS_ORDER_HEADER_IN</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Campos de comunicação: cabeçalho doc.SD</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GS_ORDER_HEADER_INX</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Campos de seleção cabeçalho doc.SD</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GV_ORDEM</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Documento de vendas</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>FILL_CONDITIONS</CMPNAME>
+     <SCONAME>IV_ITEM</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Dados Itens - Criar Pedido</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>FILL_EXTENSIONS</CMPNAME>
+     <SCONAME>IV_ITEM</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Dados Itens - Criar Pedido</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MAIN</CMPNAME>
+     <SCONAME>ET_RETURN</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Mensagens de erro</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SET_DADOS_INPUT</CMPNAME>
+     <SCONAME>IV_DADOS</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Dados Cabeçalho - Criar Pedido</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

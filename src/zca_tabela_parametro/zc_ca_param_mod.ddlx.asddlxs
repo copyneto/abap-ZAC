@@ -1,0 +1,40 @@
+@Metadata.layer: #CORE
+
+@UI: {
+  headerInfo: {
+    typeName: 'Módulo',
+    typeNamePlural: 'Módulos',
+    title: {
+      type: #STANDARD,
+      label: 'Módulo',
+      value: 'Modulo'
+    },
+    description: { 
+      value: 'Descricao'}
+  }}
+annotate view ZC_CA_PARAM_MOD with
+{
+
+  @UI.facet: [ { id:            'Modulo',
+                 purpose:       #STANDARD,
+                 type:          #IDENTIFICATION_REFERENCE,
+                 label:         'Módulo',
+                 position:      10 },
+
+               { id:            'Parametros',
+                 purpose:       #STANDARD,
+                 type:          #LINEITEM_REFERENCE,
+                 label:         'Parâmetros',
+                 position:      20,
+                 targetElement: '_Parametros'}]
+
+  @UI: { lineItem:        [ { position: 10 } ],
+         selectionField:  [ { position: 10 } ],
+         identification:  [ { position: 10 } ],
+         textArrangement: #TEXT_LAST }
+  Modulo;
+
+  @UI: { identification: [{ position: 20 }] }
+  Descricao;
+
+}

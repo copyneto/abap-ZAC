@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Definition Timesheet'
+define service ZUI_CA_TIMESHEET {
+  expose ZC_CA_TIMESHEET;
+}

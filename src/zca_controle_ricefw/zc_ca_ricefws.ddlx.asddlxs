@@ -1,0 +1,265 @@
+@Metadata.layer: #CORE
+@UI.headerInfo: { typeName: 'RICEFW', typeNamePlural: 'RICEFWs',
+  title: { type: #STANDARD, value: 'IdRicefw' },
+  description: { type: #STANDARD, value: 'IdGap' } } 
+annotate view ZC_CA_RICEFWS with
+{
+
+
+  @UI.facet: 
+  [
+//  //      /* Header Facets */
+//  //      { purpose: #HEADER,
+//  //        position: 10,
+//  //        type: #DATAPOINT_REFERENCE,
+//  //        targetQualifier: 'StatusData' },
+//      /* Header Facets */
+//      { purpose: #HEADER,
+//        position: 10,
+//        id:              'Chart1-ID',
+//label:           'Chart facet',
+//        type: #CHART_REFERENCE,
+//      targetQualifier: 'TesteChart' , 
+//      targetElement:   '_Estimativas'
+//},
+
+    // Faceta Demanda
+    { position:  10,
+      id:        'Demanda',
+      label:     'Demanda',
+      type:      #COLLECTION },
+
+    // Grupo Geral
+    { parentId:  'Demanda',
+      position:  10,
+      label:     'Dados Gerais',
+      purpose:   #STANDARD,
+      type:      #IDENTIFICATION_REFERENCE },
+
+
+    { parentId:  'Demanda',
+      id:        'DadosAdicionais',
+      position:  20,
+      label:     'Dados Adicionais',
+      purpose:   #STANDARD,
+      targetQualifier: 'DadosAdicionais',
+      type:      #FIELDGROUP_REFERENCE },
+      
+    { parentId:  'Demanda',
+      id:        'Desenvolvimento',
+      position:  30,
+      label:     'Desenvolvimento',
+      purpose:   #STANDARD,
+      targetQualifier: 'Desenvolvimento',
+      type:      #FIELDGROUP_REFERENCE },
+
+//    { parentId:  'Demanda',
+//      id:        'teste',
+//      position:  40,
+//      label:     'teste',
+//      purpose:   #STANDARD,
+//      targetQualifier: 'teste',
+//      type:      #FIELDGROUP_REFERENCE },
+      
+     // Faceta Estimativa Inicial
+     { position: 20,
+       id:       'EstimativaInicial',
+       label:    'Estimativa Inicial',
+       purpose:  #STANDARD,
+       type:     #COLLECTION },
+
+    // Estimativa Inicial Geral
+    { parentId:  'EstimativaInicial',
+      id:        'EstimativaInicialGeral',
+      position:  10,
+      label:     'Dados Gerais',
+      purpose:   #STANDARD,
+      targetQualifier: 'EstimativaInicialGeral',
+      type:      #FIELDGROUP_REFERENCE },
+
+    // Estimativa Inicial ABAP
+    { parentId:  'EstimativaInicial',
+      id:        'EstimativaInicialABAP',
+      position:  20,
+      label:     'Estimativa ABAP',
+      purpose:   #STANDARD,
+      targetQualifier: 'EstimativaInicialABAP',
+      type:      #FIELDGROUP_REFERENCE },
+
+    // Estimativa Inicial PO
+    { parentId:  'EstimativaInicial',
+      id:        'EstimativaInicialPO',
+      position:  30,
+      label:     'Estimativa PO',
+      purpose:   #STANDARD,
+      targetQualifier: 'EstimativaInicialPO',
+      type:      #FIELDGROUP_REFERENCE },
+
+     // Faceta Estimativa EF
+     { position: 30,
+       id:       'EstimativaEF',
+       label:    'Estimativa EF',
+       purpose:  #STANDARD,
+       type:     #COLLECTION },
+
+    // Estimativa Inicial Geral
+    { parentId:  'EstimativaEF',
+      id:        'EstimativaEFGeral',
+      position:  10,
+      label:     'Dados Gerais',
+      purpose:   #STANDARD,
+      targetQualifier: 'EstimativaEFGeral',
+      type:      #FIELDGROUP_REFERENCE },
+
+    // Estimativa Inicial ABAP
+    { parentId:  'EstimativaEF',
+      id:        'EstimativaEFABAP',
+      position:  20,
+      label:     'Estimativa ABAP',
+      purpose:   #STANDARD,
+      targetQualifier: 'EstimativaEFABAP',
+      type:      #FIELDGROUP_REFERENCE },
+
+    // Estimativa Inicial PO
+    { parentId:  'EstimativaEF',
+      id:        'EstimativaEFPO',
+      position:  30,
+      label:     'Estimativa PO',
+      purpose:   #STANDARD,
+      targetQualifier: 'EstimativaEFPO',
+      type:      #FIELDGROUP_REFERENCE },
+      
+
+      // Estimativas
+      { id: 'Estimativas',
+        label: 'Estimativas',
+        purpose: #STANDARD,
+        position: 40,
+        type: #LINEITEM_REFERENCE,
+        targetElement: '_Estimativas' }
+]
+
+  @UI: { lineItem:       [{ position: 10 }],
+         identification: [{ position: 10 }] }
+  IdRicefw;
+  @UI: { lineItem:       [{ position: 20 }],
+         identification: [{ position: 20 }] }
+  IdGap;
+
+  @UI: { lineItem:       [{ position: 30, hidden: true }],
+         identification: [{ position: 30 }] }
+  Contador;
+
+  @UI: { lineItem:       [{ position: 60, hidden: true }],
+         identification: [{ position: 60, label: 'Descrição da RICEFW' }] }
+  DescRicefw;
+
+  @UI: { lineItem:       [{ position: 40 }],
+         fieldGroup:     [{ position: 10, label: 'Módulo', qualifier: 'DadosAdicionais' }] }
+  @UI.textArrangement: #TEXT_LAST
+  IdModulo;
+
+  @UI: { lineItem:       [{ position: 50, hidden: true }],
+         fieldGroup:     [{ position: 20, label: 'Cenário', qualifier: 'DadosAdicionais' }] }
+  @UI.textArrangement: #TEXT_LAST
+  IdCenario;
+
+  @UI: { lineItem:       [{ position: 70, hidden: true }],
+         fieldGroup:     [{ position: 30, label: 'Sistema Legado', qualifier: 'DadosAdicionais' }] }
+  SistLegado;
+
+  @UI: { lineItem:       [{ position: 240 }],
+         fieldGroup:     [{ position: 10, label: 'Sprint', qualifier: 'Desenvolvimento' }] }
+  @UI.textArrangement: #TEXT_ONLY
+  Sprint;
+
+  @UI: { lineItem:       [{ position: 250, criticality: 'StatusCriticality'}],
+         fieldGroup:     [{ position: 20, label: 'Status', qualifier: 'Desenvolvimento' }] }
+  @UI.textArrangement: #TEXT_ONLY
+  Status;
+
+  @UI: { lineItem:       [{ position: 260 }],
+         fieldGroup:     [{ position: 30, label: 'ABAP', qualifier: 'Desenvolvimento' }] }
+  ABAPDesenv;
+
+  @UI: { lineItem:       [{ position: 270, hidden: true }],
+         fieldGroup:     [{ position: 40, label: 'PO', qualifier: 'Desenvolvimento' }] }
+  PODesenv;
+
+  @UI: { fieldGroup:     [{ position: 50, label: 'Observações', qualifier: 'Desenvolvimento' }] }
+  Observacoes;
+
+  @UI: { lineItem:       [{ position: 80 }],
+         fieldGroup:     [{ position: 10, label: 'Tipo de RICEFW', qualifier: 'EstimativaInicialGeral' }] }
+  @UI.textArrangement: #TEXT_ONLY
+  TipoIni;
+
+  @UI: { lineItem:       [{ position: 150, hidden: true }],
+         fieldGroup:     [{ position: 20, label: 'Horas Funcionais', qualifier: 'EstimativaInicialGeral', importance: #HIGH }] }
+  MetricaFuncIni;
+
+  @UI: { lineItem:       [{ position: 110, hidden: true }],
+         fieldGroup:     [{ position: 10, label: 'Efetuada por', qualifier: 'EstimativaInicialABAP' }] }
+  ABAPEstimIni;
+
+  @UI: { lineItem:       [{ position: 90 }],
+         fieldGroup:     [{ position: 20, label: 'Complexidade', qualifier: 'EstimativaInicialABAP' }] }
+  @UI.textArrangement: #TEXT_ONLY
+  ComplexAbapIni;
+
+  @UI: { lineItem:       [{ position: 100 }],
+         fieldGroup:     [{ position: 30, label: 'Estimativa', qualifier: 'EstimativaInicialABAP', importance: #HIGH }] }
+  MetricaAbapIni;
+
+  @UI: { lineItem:       [{ position: 140, hidden: true }],
+         fieldGroup:     [{ position: 10, label: 'Efetuada por', qualifier: 'EstimativaInicialPO' }] }
+  POEstimIni;
+
+  @UI: { lineItem:       [{ position: 120, hidden: true }],
+         fieldGroup:     [{ position: 20, label: 'Complexidade', qualifier: 'EstimativaInicialPO' }] }
+  @UI.textArrangement: #TEXT_ONLY
+  ComplexPoIni;
+
+  @UI: { lineItem:       [{ position: 130, hidden: true }],
+         fieldGroup:     [{ position: 30, label: 'Estimativa', qualifier: 'EstimativaInicialPO', importance: #HIGH }] }
+  MetricaPoIni;
+
+  @UI: { lineItem:       [{ position: 160 }],
+         fieldGroup:     [{ position: 10, label: 'Tipo de RICEFW', qualifier: 'EstimativaEFGeral' }] }
+  @UI.textArrangement: #TEXT_ONLY
+  TipoReal;
+
+  @UI: { lineItem:       [{ position: 230, hidden: true }],
+         fieldGroup:     [{ position: 20, label: 'Horas Funcionais', qualifier: 'EstimativaEFGeral', importance: #HIGH }] }
+  MetricaFuncReal;
+
+  @UI: { lineItem:       [{ position: 190 }],
+         fieldGroup:     [{ position: 10, label: 'Efetuada por', qualifier: 'EstimativaEFABAP' }] }
+  ABAPEstim;
+
+  @UI: { lineItem:       [{ position: 170 }],
+         fieldGroup:     [{ position: 20, label: 'Complexidade', qualifier: 'EstimativaEFABAP' }] }
+  @UI.textArrangement: #TEXT_ONLY
+  ComplexAbapReal;
+
+  @UI: { lineItem:       [{ position: 180 }],
+         fieldGroup:     [{ position: 30, label: 'Estimativa', qualifier: 'EstimativaEFABAP', importance: #HIGH }] }
+  MetricaAbapReal;
+
+  @UI: { lineItem:       [{ position: 220, hidden: true }],
+         fieldGroup:     [{ position: 10, label: 'Efetuada por', qualifier: 'EstimativaEFPO' }] }
+  POEstim;
+
+  @UI: { lineItem:       [{ position: 200, hidden: true }],
+         fieldGroup:     [{ position: 20, label: 'Complexidade', qualifier: 'EstimativaEFPO' }] }
+  @UI.textArrangement: #TEXT_ONLY
+  ComplexPoReal;
+
+  @UI: { lineItem:       [{ position: 210, hidden: true }],
+         fieldGroup:     [{ position: 30, label: 'Estimativa', qualifier: 'EstimativaEFPO', importance: #HIGH }] }
+  MetricaPoReal;
+
+  @UI.hidden: true
+  Horas;
+
+}

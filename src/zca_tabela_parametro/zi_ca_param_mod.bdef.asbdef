@@ -1,0 +1,102 @@
+managed;
+
+define behavior for ZI_CA_PARAM_MOD alias Modulo
+implementation in class zclca_param_mod unique
+persistent table ztca_param_mod
+lock master
+authorization master ( instance )
+etag master LocalLastChangedAt
+{
+  create;
+  update;
+//  delete;
+
+  association _Parametros { create; }
+
+  field ( readonly ) CreatedBy, CreatedAt, LastChangedBy, LastChangedAt, LocalLastChangedAt;
+  field ( mandatory : create ) Modulo;
+  field ( readonly : update ) Modulo;
+
+  validation validateModulo on save { field Modulo; create; }
+
+  mapping for ztca_param_mod
+  {
+    Modulo = modulo;
+    Descricao = descricao;
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+  }
+}
+
+define behavior for ZI_CA_PARAM_PAR alias Parametro
+persistent table ztca_param_par
+lock dependent by _Modulo
+authorization dependent by _Modulo
+etag master LocalLastChangedAt
+{
+  update;
+  delete;
+
+  association _Valor { create; }
+  association _Modulo;
+
+  field ( readonly ) Modulo;
+  field ( readonly : update ) Chave1, Chave2, Chave3;
+  field ( readonly ) CreatedBy, CreatedAt, LastChangedBy, LastChangedAt, LocalLastChangedAt;
+  field ( mandatory : create ) Chave1;
+
+  mapping for ztca_param_par
+  {
+    Chave1 = chave1;
+    Chave2 = chave2;
+    Chave3 = chave3;
+    CreatedAt = created_at;
+    CreatedBy = created_by;
+    Descricao = descricao;
+    LastChangedAt = last_changed_at;
+    LastChangedBy = last_changed_by;
+    LocalLastChangedAt = local_last_changed_at;
+    Modulo = modulo;
+  }
+
+}
+
+define behavior for ZI_CA_PARAM_VAL alias Valor
+persistent table ztca_param_val
+lock dependent by _Modulo
+authorization dependent by _Modulo
+etag master LocalLastChangedAt
+{
+  update;
+  delete;
+
+  association _Modulo;
+  association _Parametros;
+
+  field ( readonly ) Modulo, Chave1, Chave2, Chave3, Descricao;
+  field ( readonly : update ) Sign, Opt, Low;
+  field ( readonly ) CreatedBy, CreatedAt, LastChangedBy, LastChangedAt, LocalLastChangedAt;
+  field ( mandatory : create ) Sign, Opt, Low;
+
+  mapping for ztca_param_val
+  {
+
+    Chave1 = chave1;
+    Chave2 = chave2;
+    Chave3 = chave3;
+    CreatedAt = created_at;
+    CreatedBy = created_by;
+    High = high;
+    LastChangedAt = last_changed_at;
+    LastChangedBy = last_changed_by;
+    LocalLastChangedAt = local_last_changed_at;
+    Low = low;
+    Modulo = modulo;
+    Opt = opt;
+    Sign = sign;
+
+  }
+}

@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCLCA_MESSAGES</CLSNAME>
+    <LANGU>P</LANGU>
+    <DESCRIPT>CA - Mensagens</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>MESSAGES_SHOW_AS_POPUP</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Exibição de mensagens em POP-UP</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>MESSAGES_SHOW_AS_POPUP</CMPNAME>
+     <SCONAME>IV_MSGID</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Campo do sistema ABAP: classe de mensagens</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MESSAGES_SHOW_AS_POPUP</CMPNAME>
+     <SCONAME>IV_MSGNO</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Campo do sistema ABAP: nº da mensagem</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MESSAGES_SHOW_AS_POPUP</CMPNAME>
+     <SCONAME>IV_MSGTY</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Campo do sistema: tipo de mensagem</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MESSAGES_SHOW_AS_POPUP</CMPNAME>
+     <SCONAME>IV_MSGV1</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Campo do sistema ABAP: variável da mensagem</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MESSAGES_SHOW_AS_POPUP</CMPNAME>
+     <SCONAME>IV_MSGV2</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Campo do sistema ABAP: variável da mensagem</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MESSAGES_SHOW_AS_POPUP</CMPNAME>
+     <SCONAME>IV_MSGV3</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Campo do sistema ABAP: variável da mensagem</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MESSAGES_SHOW_AS_POPUP</CMPNAME>
+     <SCONAME>IV_MSGV4</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Campo do sistema ABAP: variável da mensagem</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

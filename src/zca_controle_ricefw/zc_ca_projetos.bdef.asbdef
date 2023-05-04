@@ -1,0 +1,28 @@
+projection;
+
+define behavior for ZC_CA_PROJETOS alias Projetos
+{
+  use create;
+  use update;
+  use delete;
+
+  use association _Ricefws { create; }
+}
+
+define behavior for ZC_CA_RICEFWS alias Ricefws
+{
+  use update;
+  use delete;
+
+  use association _Estimativas { create; }
+  use association _Projetos;
+}
+
+define behavior for ZC_CA_ESTIMATIVAS alias Estimativas
+{
+  use update;
+  use delete;
+
+  use association _Projetos;
+  use association _Ricefws;
+}

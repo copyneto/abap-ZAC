@@ -1,0 +1,168 @@
+@Metadata.layer: #CORE
+@UI: { headerInfo: { typeName: 'Estimativa', typeNamePlural: 'Estimativas',
+                     title: { type: #STANDARD, value: 'Atividade' },
+                     description: { type: #STANDARD, value: '_Ricefws.IdGap' }  },
+       presentationVariant: [{ sortOrder: [{ by: 'Sequencial' }] }] }
+       
+////@UI.chart: [{
+////    title: 'Titulo',
+////    description: 'Descrição',
+////    chartType: #AREA,
+////    measures: [ 'DistinctEvolucao'
+////    ],
+////    measureAttributes: [
+////      {
+////        measure: 'DistinctEvolucao',
+////        role: #AXIS_1,
+////        asDataPoint: true
+////      }
+////    ],
+////    qualifier: 'TesteChart'
+////  }
+////]
+//@UI.chart: [{
+//      qualifier: 'TesteChart',
+//      title: 'Workflow Count',
+//      chartType: #PIE,
+//      dimensions: ['Sequencial'],
+//      measures: ['MetricaABAP'],
+//      dimensionAttributes: [{ dimension: 'Sequencial', role: #CATEGORY }],
+//      measureAttributes: [{ measure: 'MetricaABAP', role: #AXIS_1, asDataPoint: true }]
+//      }] 
+annotate view ZC_CA_ESTIMATIVAS with
+{
+  @UI.facet: [
+//    { purpose: #HEADER,
+//      position: 10,
+//      id:              'Q2',
+//      label:           'Chart facet',
+//      type: #CHART_REFERENCE,
+//      targetQualifier: 'TesteChart' 
+//    },
+  
+    /* Standard Facets */
+    { label: 'Informações Gerais',
+      id: 'GeneralInfo',
+      type: #COLLECTION,
+      position: 10 },
+
+    // Grupo Geral
+    { label: 'Geral',
+      purpose: #STANDARD,
+      position: 10,
+      type: #IDENTIFICATION_REFERENCE,
+      parentId: 'GeneralInfo' }
+      
+  ]
+
+  @UI: { lineItem:       [{ position: 10 }],
+         identification: [{ position: 10 }] }
+  Sequencial;
+
+  @UI: { lineItem:       [{ position: 20 }],
+         identification: [{ position: 20 }] }
+  IdDesenvOk;
+
+  @UI: { lineItem:       [{ position: 30 }],
+         identification: [{ position: 30 }] }
+  Atividade;
+
+//    @UI.dataPoint: {title: 'Total',
+//        criticalityCalculation: {
+//        improvementDirection: #TARGET,
+//        deviationRangeHighValue: 2000, // Just Playing around with some numbers here...
+//        toleranceRangeLowValue: 50 // Just Playing around with some numbers here...
+//        }}
+  @UI: { lineItem:       [{ position: 40 }], //, qualifier: 'Q1', type: #AS_DATAPOINT }],
+         identification: [{ position: 40 }] }
+  MetricaAbap;
+
+  @UI: { lineItem:       [{ position: 50, hidden: true }],
+         identification: [{ position: 50 }] }
+  MetricaPo;
+
+  @UI: { lineItem:       [{ position: 60 }],
+         identification: [{ position: 60 }] }
+  DesenvAbapPo;
+
+  @UI: { lineItem:       [{ position: 70 }],
+         identification: [{ position: 70 }] }
+  DataInicio;
+
+  @UI: { lineItem:       [{ position: 80, criticality: 'DataPrevistaCritic', criticalityRepresentation: #WITHOUT_ICON }],
+         identification: [{ position: 80, criticality: 'DataPrevistaCritic', criticalityRepresentation: #WITHOUT_ICON }] }
+  DataPrevista;
+
+  @UI: { lineItem:       [{ position: 90, criticality: 'DataEntregaCritic', criticalityRepresentation: #WITHOUT_ICON }],
+         identification: [{ position: 90, criticality: 'DataEntregaCritic', criticalityRepresentation: #WITHOUT_ICON }] }
+  DataEntrega;
+
+  @UI: { lineItem:       [{ position: 100 }],
+         identification: [{ position: 100 }] }
+  Evolucao;
+
+//@UI.dataPoint: {
+//  criticality: 'DataPrevistaCritic',
+//  maximumValue: 20 }
+//  DistinctEvolucao;
+
+  @UI: { lineItem:       [{ position: 110, criticality: 'StatusCriticality', criticalityRepresentation: #WITHOUT_ICON }],
+         identification: [{ position: 110, criticality: 'StatusCriticality', criticalityRepresentation: #WITHOUT_ICON }]}
+  @UI.textArrangement: #TEXT_ONLY
+  DesenvStatus;
+
+  @UI: { identification: [{ position: 120 }] }
+  Observacoes;
+
+  @UI: { identification: [{ position: 130 }] }
+  Dependencia;
+
+  @UI: { identification: [{ position: 140 }] }
+  Pacote;
+
+  @UI.hidden: true
+  UuidEstimativa;
+
+  @UI.hidden: true
+  UuidProjeto;
+
+  @UI.hidden: true
+  UuidRicefw;
+
+  @UI.hidden: true
+  DesenvOk;
+
+  @UI.hidden: true
+  DataPrevistaCritic;
+
+  @UI.hidden: true
+  DataEntregaCritic;
+
+  @UI.hidden: true
+  StatusCriticality;
+
+  @UI.hidden: true
+  DescStatus;
+
+  @UI.hidden: true
+  NomeDesenv;
+
+  @UI.hidden: true
+  NomeCriador;
+
+  @UI.hidden: true
+  NomeModificador;
+
+  @UI.hidden: true
+  LocalLastChangedAt;
+
+  @UI.hidden: true
+  Percent;
+
+  @UI.hidden: true
+  Horas;
+
+  @UI.hidden: true
+  _Ricefws;
+
+}
