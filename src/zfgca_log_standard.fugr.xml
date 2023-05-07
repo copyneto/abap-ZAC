@@ -11,7 +11,6 @@
     <item>
      <FUNCNAME>ZFMCA_LOG_MSG_ADD</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
-     <SHORT_TEXT>Adiciona mensagem</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IS_LOG</PARAMETER>
@@ -32,17 +31,14 @@
       <RSFDO>
        <PARAMETER>IS_LOG</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Log de aplicação: handle de um log</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IS_MSG</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Parâmetro de retorno</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_MSGS</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Mensagens de erro</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>

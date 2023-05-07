@@ -4,8 +4,7 @@
   <asx:values>
    <DCLS>
     <DCLNAME>ZI_CA_PARAM_MOD</DCLNAME>
-    <DCLLANGUAGE>P</DCLLANGUAGE>
-    <DDTEXT>Acess Control - Módulo</DDTEXT>
+    <DCLLANGUAGE>E</DCLLANGUAGE>
    </DCLS>
   </asx:values>
  </asx:abap>
