@@ -27,23 +27,32 @@ CLASS ZCLCA_TIMESHEET_DPC_EXT IMPLEMENTATION.
           lo_exception TYPE REF TO /iwbep/cx_mgw_busi_exception,
           ls_entity    TYPE ty_entity,
           lv_filename  TYPE string,
-          lv_tablename TYPE tablename.
+          lv_tablename TYPE tablename,
+          lt_return    TYPE bapiret2_t,
+          lv_mime_type TYPE char100 VALUE 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'.
 
     DATA(lo_timesheet) = NEW zclca_timesheet( ).
 
     SPLIT iv_slug AT ';' INTO lv_filename lv_tablename.
+
+    IF is_media_resource-mime_type <> lv_mime_type.
+      lt_return[] = VALUE #( BASE lt_return ( type = 'E' id = 'ZCA_EXCEL' number = '000'
+                                              message_v1 = 'Arquivo inválido, salve em formato padrão do Excel' ) ).
+    ELSE.
 * ----------------------------------------------------------------------
 * Gerencia Botão do aplicativo
 * ----------------------------------------------------------------------
-    lo_timesheet->upload_file( EXPORTING iv_file         = is_media_resource-value
-                                         iv_filename     = lv_filename
-                               IMPORTING et_return    = DATA(lt_return) ).
+      lo_timesheet->upload_file( EXPORTING iv_file      = is_media_resource-value
+                                           iv_filename  = lv_filename
+                                 IMPORTING et_return    = lt_return ).
 
-    TRY.
-        ls_entity-filename = lv_filename.
-        ls_entity-message  = lt_return[ 1 ]-message.
-      CATCH cx_root.
-    ENDTRY.
+      TRY.
+          ls_entity-filename = lv_filename.
+          ls_entity-message  = lt_return[ 1 ]-message.
+        CATCH cx_root.
+      ENDTRY.
+
+    ENDIF.
 
 * ----------------------------------------------------------------------
 * Prepara informações de retorno

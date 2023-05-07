@@ -22,7 +22,8 @@ CLASS ZCLCA_TIMESHEET IMPLEMENTATION.
 
   METHOD upload_file.
 
-    DATA: lt_file       TYPE TABLE OF ztca_timesheet.
+    DATA: lt_file       TYPE TABLE OF zsca_timesheet.
+    "DATA: lt_file       TYPE TABLE OF zctgsd_preco_arquivo.
     DATA: lt_timesheet  TYPE TABLE OF ztca_timesheet.
     DATA: ls_timesheet  TYPE ztca_timesheet.
 * ---------------------------------------------------------------------------
@@ -30,11 +31,11 @@ CLASS ZCLCA_TIMESHEET IMPLEMENTATION.
 * ---------------------------------------------------------------------------
     DATA(lo_excel) = NEW zclca_excel( iv_filename = iv_filename
                                       iv_file     = iv_file ).
-    lo_excel->gv_quant = abap_true.
+    "lo_excel->gv_quant = abap_true.
     lo_excel->get_sheet( IMPORTING et_return = DATA(lt_return)              " Ignorar validação durante carga
                          CHANGING  ct_table  = lt_file[] ).
 
-    IF line_exists( lt_return[ number = '008' ] ) OR line_exists( lt_return[ number = '009' ] ).
+    IF line_exists( lt_return[ type = 'E' ] ).
       et_return = lt_return.
       RETURN.
     ENDIF.
@@ -54,12 +55,21 @@ CLASS ZCLCA_TIMESHEET IMPLEMENTATION.
       ENDTRY.
 
       ls_timesheet-created_by = sy-uname.
+      ls_timesheet-created_at = lv_timestamp.
+      ls_timesheet-local_last_changed_at = lv_timestamp.
+
       APPEND ls_timesheet TO lt_timesheet.
 
     ENDLOOP.
 
     IF lt_timesheet IS NOT INITIAL.
       MODIFY ztca_timesheet FROM TABLE lt_timesheet.
+
+      IF sy-subrc IS INITIAL.
+        et_return[] = VALUE #( BASE et_return ( type = 'S' id = 'ZCA_EXCEL' number = '000' ) ).
+      ENDIF.
+
+
     ENDIF.
 
   ENDMETHOD.
