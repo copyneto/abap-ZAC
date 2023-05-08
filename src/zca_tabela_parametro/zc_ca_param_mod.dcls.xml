@@ -4,7 +4,8 @@
   <asx:values>
    <DCLS>
     <DCLNAME>ZC_CA_PARAM_MOD</DCLNAME>
-    <DCLLANGUAGE>E</DCLLANGUAGE>
+    <DCLLANGUAGE>P</DCLLANGUAGE>
+    <DDTEXT>Access Control - Módulo Projection View</DDTEXT>
    </DCLS>
   </asx:values>
  </asx:abap>
