@@ -32,133 +32,102 @@ define custom entity ZC_CA_TIMESHEET_RES
 //    @UI : { selectionField : [ { position: 40 } ]}
 //    @EndUserText.label: 'Data Apropriação'    
 //    @Consumption.filter.selectionType: #INTERVAL
-//    DtApropriacao: abap.dats;            
-//    @UI : { lineItem      : [ { position: 60 } ]}
-//    @EndUserText.label: 'Horas Informada'            
-//    HrInformada : abap.char( 20 );
-
+//    DtApropriacao2: abap.dats;            
+    @UI : { lineItem      : [ { position: 45 } ]}
+    @EndUserText.label: 'HH Total'       
+    hhTotal : abap.char( 10 );
     @UI : { lineItem      : [ { position: 50 } ]}
-    @EndUserText.label: '26'
-    @Aggregation.default  :#SUM            
+    @EndUserText.label: '26'       
     d26 : abap.char( 10 );
     @UI : { lineItem      : [ { position: 60 } ]}
-    @EndUserText.label: '27'   
-    @Aggregation.default  :#SUM         
+    @EndUserText.label: '27'       
     d27 : abap.char( 10 );
     @UI : { lineItem      : [ { position: 70 } ]}        
-    @EndUserText.label: '28'   
-    @Aggregation.default  :#SUM         
+    @EndUserText.label: '28'       
     d28 : abap.char( 10 );
     @UI : { lineItem      : [ { position: 80 } ]}
-    @EndUserText.label: '29'   
-    @Aggregation.default  :#SUM         
+    @EndUserText.label: '29'       
     d29 : abap.char( 10 );
     @UI : { lineItem      : [ { position: 90 } ]}
-    @EndUserText.label: '30'   
-    @Aggregation.default  :#SUM         
+    @EndUserText.label: '30'       
     d30 : abap.char( 10 );
     @UI : { lineItem      : [ { position: 100 } ]}
-    @EndUserText.label: '31'   
-    @Aggregation.default  :#SUM         
+    @EndUserText.label: '31'       
     d31 : abap.char( 10 );
     @UI : { lineItem      : [ { position: 110 } ]}
-    @EndUserText.label: '01'   
-    @Aggregation.default  :#SUM         
+    @EndUserText.label: '01'       
     d01 : abap.char( 10 );
     @UI : { lineItem      : [ { position: 120 } ]}
-    @EndUserText.label: '02'
-    @Aggregation.default  :#SUM            
+    @EndUserText.label: '02'       
     d02 : abap.char( 10 );
     @UI : { lineItem      : [ { position: 130 } ]}
-    @EndUserText.label: '03'   
-    @Aggregation.default  :#SUM         
+    @EndUserText.label: '03'       
     d03 : abap.char( 10 );
     @UI : { lineItem      : [ { position: 140 } ]}
-    @EndUserText.label: '04'   
-    @Aggregation.default  :#SUM         
+    @EndUserText.label: '04'       
     d04 : abap.char( 10 );
     @UI : { lineItem      : [ { position: 150 } ]}
-    @EndUserText.label: '05'   
-    @Aggregation.default  :#SUM         
+    @EndUserText.label: '05'       
     d05 : abap.char( 10 ); 
     @UI : { lineItem      : [ { position: 160 } ]}
-    @EndUserText.label: '06'   
-    @Aggregation.default  :#SUM         
+    @EndUserText.label: '06'       
     d06 : abap.char( 10 );
     @UI : { lineItem      : [ { position: 170 } ]}
-    @EndUserText.label: '07'   
-    @Aggregation.default  :#SUM         
+    @EndUserText.label: '07'       
     d07 : abap.char( 10 );
     @UI : { lineItem      : [ { position: 180 } ]}
-    @EndUserText.label: '08'   
-    @Aggregation.default  :#SUM         
+    @EndUserText.label: '08'       
     d08 : abap.char( 10 );
     @UI : { lineItem      : [ { position: 190 } ]}
-    @EndUserText.label: '09'   
-    @Aggregation.default  :#SUM         
+    @EndUserText.label: '09'       
     d09 : abap.char( 10 );
     @UI : { lineItem      : [ { position: 200 } ]}
     @EndUserText.label: '10'    
     @Aggregation.default  :#SUM        
     d10 : abap.char( 10 );
     @UI : { lineItem      : [ { position: 210 } ]}
-    @EndUserText.label: '11'   
-    @Aggregation.default  :#SUM         
+    @EndUserText.label: '11'       
     d11 : abap.char( 10 );
     @UI : { lineItem      : [ { position: 220 } ]}
-    @EndUserText.label: '12' 
-    @Aggregation.default  :#SUM           
+    @EndUserText.label: '12'       
     d12 : abap.char( 10 );
     @UI : { lineItem      : [ { position: 230 } ]}
-    @EndUserText.label: '13'   
-    @Aggregation.default  :#SUM         
+    @EndUserText.label: '13'       
     d13 : abap.char( 10 );
     @UI : { lineItem      : [ { position: 240 } ]}
-    @EndUserText.label: '14'   
-    @Aggregation.default  :#SUM         
+    @EndUserText.label: '14'       
     d14 : abap.char( 10 );
     @UI : { lineItem      : [ { position: 250 } ]}
-    @EndUserText.label: '15'   
-    @Aggregation.default  :#SUM         
+    @EndUserText.label: '15'       
     d15 : abap.char( 10 );
     @UI : { lineItem      : [ { position: 260 } ]}
-    @EndUserText.label: '16'   
-    @Aggregation.default  :#SUM         
+    @EndUserText.label: '16'       
     d16 : abap.char( 10 );
     @UI : { lineItem      : [ { position: 270 } ]}
-    @EndUserText.label: '17'   
-    @Aggregation.default  :#SUM         
+    @EndUserText.label: '17'       
     d17 : abap.char( 10 );
     @UI : { lineItem      : [ { position: 280 } ]}
-    @EndUserText.label: '18'   
-    @Aggregation.default  :#SUM         
+    @EndUserText.label: '18'       
     d18 : abap.char( 10 );
     @UI : { lineItem      : [ { position: 290 } ]}
-    @EndUserText.label: '19'   
-    @Aggregation.default  :#SUM         
+    @EndUserText.label: '19'       
     d19 : abap.char( 10 );
     @UI : { lineItem      : [ { position: 300 } ]}
-    @EndUserText.label: '20'   
-    @Aggregation.default  :#SUM         
+    @EndUserText.label: '20'       
     d20 : abap.char( 10 );
     @UI : { lineItem      : [ { position: 310 } ]}
-    @EndUserText.label: '21'   
-    @Aggregation.default  :#SUM         
+    @EndUserText.label: '21'       
     d21 : abap.char( 10 );
     @UI : { lineItem      : [ { position: 320 } ]}
-    @EndUserText.label: '22'   
-    @Aggregation.default  :#SUM         
+    @EndUserText.label: '22'       
     d22 : abap.char( 10 );
     @UI : { lineItem      : [ { position: 330 } ]}
-    @EndUserText.label: '23'   
-    @Aggregation.default  :#SUM         
+    @EndUserText.label: '23'       
     d23 : abap.char( 10 );
     @UI : { lineItem      : [ { position: 340 } ]}
-    @EndUserText.label: '24'   
-    @Aggregation.default  :#SUM         
+    @EndUserText.label: '24'       
     d24 : abap.char( 10 );
     @UI : { lineItem      : [ { position: 350 } ]}
-    @EndUserText.label: '25'   
-    @Aggregation.default  :#SUM         
+    @EndUserText.label: '25'       
     d25 : abap.char( 10 );                                                                                                                                                       
 }

@@ -38,11 +38,12 @@ CLASS ZCLCA_TIMESHEET_RESUMO IMPLEMENTATION.
 
   METHOD build.
 
-    DATA: lt_result TYPE STANDARD TABLE OF zc_ca_timesheet_res,
+    DATA: lt_result   TYPE STANDARD TABLE OF zc_ca_timesheet_res,
           "ls_data   TYPE zi_ca_timesheet,
-          ls_result TYPE zc_ca_timesheet_res,
-          lv_time   TYPE c LENGTH 20,
-          lv_r_time TYPE sy-uzeit.
+          ls_result   TYPE zc_ca_timesheet_res,
+          lv_time     TYPE c LENGTH 20,
+          lv_time_tot TYPE c LENGTH 20,
+          lv_r_time   TYPE sy-uzeit.
 
     CHECK gs_range IS NOT INITIAL.
 
@@ -85,6 +86,8 @@ CLASS ZCLCA_TIMESHEET_RESUMO IMPLEMENTATION.
 
     LOOP AT lt_result ASSIGNING FIELD-SYMBOL(<fs_result>).
 
+      CLEAR: lv_time_tot.
+
       LOOP AT lt_data INTO DATA(ls_data) WHERE  contrato EQ <fs_result>-contrato
                                           AND   tarefa EQ <fs_result>-tarefa
                                           AND   usuario EQ <fs_result>-usuario
@@ -101,6 +104,7 @@ CLASS ZCLCA_TIMESHEET_RESUMO IMPLEMENTATION.
           lv_time = lv_time + ls_grp_dat-hrinformada.
         ENDLOOP.
 
+        lv_time_tot = lv_time_tot + lv_time.
         lv_r_time+0(2) = floor( lv_time / 3600 ).
         lv_r_time+2(2) = floor( ( lv_time MOD 3600 ) / 60 ).
         lv_r_time+4(2) = ( lv_time MOD 3600 ) MOD 60.
@@ -144,6 +148,12 @@ CLASS ZCLCA_TIMESHEET_RESUMO IMPLEMENTATION.
 
       ENDLOOP.
 
+      CLEAR: lv_r_time.
+      lv_r_time+0(2) = floor( lv_time_tot / 3600 ).
+      lv_r_time+2(2) = floor( ( lv_time_tot MOD 3600 ) / 60 ).
+      lv_r_time+4(2) = ( lv_time_tot MOD 3600 ) MOD 60.
+      lv_time_tot = |{ lv_r_time(2) }:{ lv_r_time+2(2) }:{ lv_r_time+4(2) }|.
+      <fs_result>-hhtotal = lv_time_tot.
     ENDLOOP.
 
     et_relat = CORRESPONDING #( lt_result ).
