@@ -25,7 +25,12 @@ define view entity ZI_CA_VH_DOCSTA
       @Search.defaultSearchElement: true
       @Search.ranking: #HIGH
       @Search.fuzzinessThreshold: 0.7
-      _Text.ddtext                                   as StatusDocText
+      _Text.ddtext                                  as StatusDocText,
+      @Search.defaultSearchElement: true
+      @Search.ranking: #HIGH
+      @Search.fuzzinessThreshold: 0.7
+      @UI.hidden: true
+      Domain.domvalue_l                             as StatusDocSearch
 
 }
 where

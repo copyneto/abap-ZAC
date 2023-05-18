@@ -17,15 +17,18 @@ define view entity ZI_CA_VH_MODEL
                                    and _Text.ddlanguage = $session.system_language
 {
       @ObjectModel.text.element: ['model_txt']
-      @Search.ranking: #MEDIUM
-      @Search.defaultSearchElement: true
-      @Search.fuzzinessThreshold: 0.8
   key cast( Domain.domvalue_l as j_1bmodel  ) as model,
       @Semantics.text: true
       @Search.defaultSearchElement: true
       @Search.ranking: #HIGH
       @Search.fuzzinessThreshold: 0.7
-      _Text.ddtext                            as model_txt
+      _Text.ddtext                            as model_txt,
+      @Search.ranking: #MEDIUM
+      @Search.defaultSearchElement: true
+      @Search.fuzzinessThreshold: 0.8
+      @UI.hidden: true
+      Domain.domvalue_l                       as model_search
+
 
 }
 where

@@ -17,15 +17,17 @@ define view entity ZI_CA_VH_XNFE_TPTRANSP
                                    and _Text.ddlanguage = $session.system_language
 {
       @ObjectModel.text.element: ['TpTranspText']
-      @Search.ranking: #MEDIUM
-      @Search.defaultSearchElement: true
-      @Search.fuzzinessThreshold: 0.8
   key cast( Domain.domvalue_l as /xnfe/tp_transp  ) as TpTransp,
       @Semantics.text: true
       @Search.defaultSearchElement: true
       @Search.ranking: #HIGH
       @Search.fuzzinessThreshold: 0.7
-      _Text.ddtext                             as TpTranspText
+      _Text.ddtext                                  as TpTranspText,
+      @Search.defaultSearchElement: true
+      @Search.ranking: #MEDIUM
+      @Search.fuzzinessThreshold: 0.7
+      @UI.hidden: true
+      Domain.domvalue_l                             as TpTranspSearch
 
 }
 where

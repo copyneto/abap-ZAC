@@ -10,7 +10,7 @@
 @Search.searchable: true
 
 define view entity ZI_CA_VH_PARTNER_ORG
-  as select from but000       as Pessoa
+  as select from    but000       as Pessoa
     left outer join dfkkbptaxnum as _CNPJ on  _CNPJ.partner = Pessoa.partner
                                           and _CNPJ.taxtype = 'BR1'
 {
@@ -28,9 +28,6 @@ define view entity ZI_CA_VH_PARTNER_ORG
       @UI.hidden: true
       _CNPJ.taxnum      as CNPJ,
       @EndUserText.label: 'CNPJ'
-      @Search.defaultSearchElement: true
-      @Search.ranking: #HIGH
-      @Search.fuzzinessThreshold: 0.7
       case when _CNPJ.taxnum is initial then ''
            else concat( substring(_CNPJ.taxnum, 1, 2),
                 concat( '.',
@@ -40,8 +37,13 @@ define view entity ZI_CA_VH_PARTNER_ORG
                 concat( '/',
                 concat( substring(_CNPJ.taxnum, 9, 4),
                 concat( '-',  substring(_CNPJ.taxnum, 13, 2) ) ) ) ) ) ) ) )
-      end               as CNPJText
+      end               as CNPJText,
+      @Search.ranking: #MEDIUM
+      @Search.defaultSearchElement: true
+      @Search.fuzzinessThreshold: 0.8
+      @UI.hidden: true
+      _CNPJ.taxnum      as CNPJSearch
 
-  }
+}
 where
   Pessoa.type = '2'

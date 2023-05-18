@@ -17,15 +17,17 @@ define view entity ZI_CA_VH_TPEMIS
                                    and _Text.ddlanguage = $session.system_language
 {
       @ObjectModel.text.element: ['TipoEmissaoText']
-      @Search.ranking: #MEDIUM
-      @Search.defaultSearchElement: true
-      @Search.fuzzinessThreshold: 0.8
   key cast( Domain.domvalue_l as j_1bnfe_tpemis ) as TipoEmissao,
       @Semantics.text: true
       @Search.defaultSearchElement: true
       @Search.ranking: #HIGH
       @Search.fuzzinessThreshold: 0.7
-      _Text.ddtext                                as TipoEmissaoText
+      _Text.ddtext                                as TipoEmissaoText,
+      @Search.defaultSearchElement: true
+      @Search.ranking: #MEDIUM
+      @Search.fuzzinessThreshold: 0.7
+      @UI.hidden: true
+      Domain.domvalue_l                           as TipoEmissaoTextSearch
 
 }
 where

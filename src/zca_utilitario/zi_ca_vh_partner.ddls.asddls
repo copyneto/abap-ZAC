@@ -21,9 +21,6 @@ define view entity ZI_CA_VH_PARTNER
     left outer join t001w        as _Centro on _Centro.kunnr = Pessoa.partner
 {
       @EndUserText.label: 'Parceiro de negócios'
-      @Search.ranking: #MEDIUM
-      @Search.defaultSearchElement: true
-      @Search.fuzzinessThreshold: 0.8
   key Pessoa.partner     as Parceiro,
       @EndUserText.label: 'Tipo do Parceiro'
       @Search.defaultSearchElement: true
@@ -31,9 +28,6 @@ define view entity ZI_CA_VH_PARTNER
       @Search.fuzzinessThreshold: 0.7
       Pessoa.bpkind      as Bpkind,
       @EndUserText.label: 'Nome completo'
-      @Search.defaultSearchElement: true
-      @Search.ranking: #HIGH
-      @Search.fuzzinessThreshold: 0.7
       case when Pessoa.name1_text is not initial
            then Pessoa.name1_text
            when Pessoa.name_first is not initial
@@ -46,9 +40,6 @@ define view entity ZI_CA_VH_PARTNER
       @UI.hidden: true
       _Cnpj.taxnum       as CNPJ,
       @EndUserText.label: 'CNPJ'
-      @Search.defaultSearchElement: true
-      @Search.ranking: #HIGH
-      @Search.fuzzinessThreshold: 0.7
       case when _Cnpj.taxnum is initial then ''
            else concat( substring(_Cnpj.taxnum, 1, 2),
                 concat( '.',
@@ -63,9 +54,6 @@ define view entity ZI_CA_VH_PARTNER
       @UI.hidden: true
       _Cpf.taxnum        as CPF,
       @EndUserText.label: 'CPF'
-      @Search.defaultSearchElement: true
-      @Search.ranking: #HIGH
-      @Search.fuzzinessThreshold: 0.7
       case when _Cpf.taxnum is initial then ''
            else concat( substring(_Cpf.taxnum, 1, 3),
                 concat( '.',
@@ -93,7 +81,40 @@ define view entity ZI_CA_VH_PARTNER
       @Search.defaultSearchElement: true
       @Search.ranking: #HIGH
       @Search.fuzzinessThreshold: 0.7
-      _Centro.j_1bbranch as LocalNegocio
+      _Centro.j_1bbranch as LocalNegocio,
+
+      @Search.ranking: #MEDIUM
+      @Search.defaultSearchElement: true
+      @Search.fuzzinessThreshold: 0.8
+      @UI.hidden: true
+      _Cnpj.taxnum       as cnpj_search,
+      @Search.ranking: #MEDIUM
+      @Search.defaultSearchElement: true
+      @Search.fuzzinessThreshold: 0.8
+      @UI.hidden: true
+      _Cpf.taxnum        as cpf_search,
+      @Search.defaultSearchElement: true
+      @Search.ranking: #HIGH
+      @Search.fuzzinessThreshold: 0.7
+      @UI.hidden: true
+      Pessoa.name1_text  as name_search,
+      @Search.defaultSearchElement: true
+      @Search.ranking: #HIGH
+      @Search.fuzzinessThreshold: 0.7
+      @UI.hidden: true
+      Pessoa.name_first  as name_first_search,
+      @Search.defaultSearchElement: true
+      @Search.ranking: #HIGH
+      @Search.fuzzinessThreshold: 0.7
+      @UI.hidden: true
+      Pessoa.name_last   as name_last_search,
+      @Search.defaultSearchElement: true
+      @Search.ranking: #HIGH
+      @Search.fuzzinessThreshold: 0.7
+      @UI.hidden: true
+      Pessoa.name_org1   as name_org_search
+
+
 }
 where
      _Cnpj.taxnum is not initial

@@ -17,15 +17,17 @@ define view entity ZI_CA_VH_XNFE_STEPSTAT
                                    and _Text.ddlanguage = $session.system_language
 {
       @ObjectModel.text.element: ['StepStatusText']
-      @Search.ranking: #MEDIUM
-      @Search.defaultSearchElement: true
-      @Search.fuzzinessThreshold: 0.8
   key cast( Domain.domvalue_l as /xnfe/stepstat   ) as StepStatus,
       @Semantics.text: true
       @Search.defaultSearchElement: true
       @Search.ranking: #HIGH
       @Search.fuzzinessThreshold: 0.7
-      _Text.ddtext                                  as StepStatusText
+      _Text.ddtext                                  as StepStatusText,
+      @Search.defaultSearchElement: true
+      @Search.ranking: #MEDIUM
+      @Search.fuzzinessThreshold: 0.7
+      @UI.hidden: true
+      Domain.domvalue_l                             as StepStatusSearch
 
 }
 where

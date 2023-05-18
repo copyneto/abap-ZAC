@@ -12,9 +12,6 @@ define view entity ZI_CA_VH_PADEST
   as select from tsp03  as _Printer
     inner join   tsp03l as _Text on _Text.padest = _Printer.padest
 {
-      @Search.ranking: #MEDIUM
-      @Search.defaultSearchElement: true
-      @Search.fuzzinessThreshold: 0.8
       @EndUserText.label: 'Impressora'
   key cast ( _Printer.padest as abap.char( 4) ) as Printer,
       @Search.ranking: #HIGH
@@ -24,5 +21,10 @@ define view entity ZI_CA_VH_PADEST
       @Search.ranking: #HIGH
       @Search.fuzzinessThreshold: 0.7
       @EndUserText.label: 'Tipo de dispositivo'
-      _Printer.patype                           as PrinterType
+      _Printer.patype                           as PrinterType,
+      @Search.defaultSearchElement: true
+      @Search.ranking: #MEDIUM
+      @Search.fuzzinessThreshold: 0.7
+      @UI.hidden: true
+      _Printer.padest                           as PrinterSearch
 }

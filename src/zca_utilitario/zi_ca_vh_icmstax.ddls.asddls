@@ -14,7 +14,7 @@ define view ZI_CA_VH_ICMSTAX
   association [0..1] to I_Language as _Language on $projection.language = _Language.Language
 {
       @ObjectModel.text.element: ['Text']
-      @Search.defaultSearchElement: true
+      //    @Search.defaultSearchElement: true
   key cast(case substring( Objeto.domvalue_l, 1, 1 )
     when 'A' then '41'
     when 'B' then '51'

@@ -18,15 +18,17 @@ define view entity ZI_CA_VH_LFSTK
                                    and _Text.ddlanguage = $session.system_language
 {
       @ObjectModel.text.element: ['OverallDeliveryStatusText']
-      @Search.ranking: #MEDIUM
-      @Search.defaultSearchElement: true
-      @Search.fuzzinessThreshold: 0.8
   key cast( Domain.domvalue_l as lfstk ) as OverallDeliveryStatus,
       @Semantics.text: true
       @Search.defaultSearchElement: true
       @Search.ranking: #HIGH
       @Search.fuzzinessThreshold: 0.7
-      _Text.ddtext                       as OverallDeliveryStatusText
+      _Text.ddtext                       as OverallDeliveryStatusText,
+      @Search.defaultSearchElement: true
+      @Search.ranking: #MEDIUM
+      @Search.fuzzinessThreshold: 0.7
+      @UI.hidden: true
+      Domain.domvalue_l                  as OverallDeliveryStatusSearch
 
 }
 where

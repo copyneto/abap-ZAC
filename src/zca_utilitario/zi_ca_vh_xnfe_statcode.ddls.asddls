@@ -20,8 +20,5 @@ define view entity ZI_CA_VH_XNFE_STATCODE
       @Search.fuzzinessThreshold: 0.8
   key Status.statcode                  as StatusCode,
       @EndUserText.label: 'Descrição'
-      @Search.defaultSearchElement: true
-      @Search.ranking: #HIGH
-      @Search.fuzzinessThreshold: 0.7
       replace( _Text.description, 'NF-e', 'MDF-e') as StatusText
 }

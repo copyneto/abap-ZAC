@@ -17,15 +17,17 @@ define view entity ZI_CA_VH_WDTYP
                                    and _Text.ddlanguage = $session.system_language
 {
       @ObjectModel.text.element: ['wdtyp_txt']
-      @Search.ranking: #MEDIUM
-      @Search.defaultSearchElement: true
-      @Search.fuzzinessThreshold: 0.8
   key cast( Domain.domvalue_l as doctype ) as wdtyp,
       @Semantics.text: true
       @Search.defaultSearchElement: true
       @Search.ranking: #HIGH
       @Search.fuzzinessThreshold: 0.7
-      _Text.ddtext                         as wdtyp_txt
+      _Text.ddtext                         as wdtyp_txt,
+      @Search.defaultSearchElement: true
+      @Search.ranking: #MEDIUM
+      @Search.fuzzinessThreshold: 0.7
+      @UI.hidden: true
+      Domain.domvalue_l                    as wdtyp_search
 
 }
 where

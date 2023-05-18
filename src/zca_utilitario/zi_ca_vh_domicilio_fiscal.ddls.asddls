@@ -26,7 +26,7 @@ define view ZI_CA_VH_DOMICILIO_FISCAL
        @Search.defaultSearchElement: true
        _Text.text                                         as Text,
        @EndUserText.label: 'Região'
-       cast( left( _Tax.taxjurcode, 2) as regio ) as Region,
+       cast( left( _Tax.taxjurcode, 2) as regio )         as Region,
        @EndUserText.label: 'Região'
        @Search.defaultSearchElement: true
        @Search.ranking: #MEDIUM
