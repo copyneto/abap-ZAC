@@ -13,18 +13,18 @@ define view entity ZI_CA_VH_PADEST
     inner join   tsp03l as _Text on _Text.padest = _Printer.padest
 {
       @EndUserText.label: 'Impressora'
-  key cast ( _Printer.padest as abap.char( 4) ) as Printer,
+  key cast ( _Printer.padest as abap.char(30) ) as Printer,
       @Search.ranking: #HIGH
       @Search.fuzzinessThreshold: 0.7
       @EndUserText.label: 'Descrição do dispositivo'
-      _Text.lname                               as DescPrinter,
+      _Text.lname                              as DescPrinter,
       @Search.ranking: #HIGH
       @Search.fuzzinessThreshold: 0.7
       @EndUserText.label: 'Tipo de dispositivo'
-      _Printer.patype                           as PrinterType,
+      _Printer.patype                          as PrinterType,
       @Search.defaultSearchElement: true
       @Search.ranking: #MEDIUM
       @Search.fuzzinessThreshold: 0.7
       @UI.hidden: true
-      _Printer.padest                           as PrinterSearch
+      _Printer.padest                          as PrinterSearch
 }
