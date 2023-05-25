@@ -7,7 +7,7 @@
     sizeCategory: #S,
     dataClass: #MIXED
 }
-@Search.searchable: true
+ @Search.searchable: true
 define view entity ZI_CA_VH_PADEST
   as select from tsp03  as _Printer
     inner join   tsp03l as _Text on _Text.padest = _Printer.padest
@@ -17,14 +17,16 @@ define view entity ZI_CA_VH_PADEST
       @Search.ranking: #HIGH
       @Search.fuzzinessThreshold: 0.7
       @EndUserText.label: 'Descrição do dispositivo'
-      _Text.lname                              as DescPrinter,
+      _Text.lname                         as DescPrinter,
+      @Search.defaultSearchElement: true
       @Search.ranking: #HIGH
       @Search.fuzzinessThreshold: 0.7
       @EndUserText.label: 'Tipo de dispositivo'
-      _Printer.patype                          as PrinterType,
-      @Search.defaultSearchElement: true
-      @Search.ranking: #MEDIUM
-      @Search.fuzzinessThreshold: 0.7
-      @UI.hidden: true
-      _Printer.padest                          as PrinterSearch
+      _Printer.patype                          as PrinterType
+//      ,
+//      @Search.defaultSearchElement: true
+//     @Search.ranking: #MEDIUM
+//      @Search.fuzzinessThreshold: 0.7
+//      @UI.hidden: true
+//     _Printer.padest                          as PrinterSearch
 }

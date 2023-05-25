@@ -3,7 +3,6 @@
 @AbapCatalog.preserveKey: true
 @AccessControl.authorizationCheck: #CHECK
 @EndUserText.label: 'Help Search: SD código do imposto'
-@Search.searchable: true
 define view ZI_CA_VH_ICMSTAX
   as select from dd07l as Objeto
     join         dd07t as Text on  Text.domname  = Objeto.domname
