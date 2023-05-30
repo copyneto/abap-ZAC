@@ -409,9 +409,16 @@ CLASS ZCLCA_EXCEL IMPLEMENTATION.
 
   METHOD convert_text_to_number.
 
+    DATA: lv_decimal TYPE decfloat34.
+
     FREE: ev_currency.
 
     DATA(lv_value) = CONV char100( iv_value ).
+
+    CONDENSE lv_value.
+    SHIFT lv_value LEFT DELETING LEADING space.
+    MOVE lv_value TO lv_decimal.
+    lv_value = lv_decimal.
 
     FIND ALL OCCURRENCES OF REGEX '[,.]' IN lv_value RESULTS DATA(lt_result).
 
