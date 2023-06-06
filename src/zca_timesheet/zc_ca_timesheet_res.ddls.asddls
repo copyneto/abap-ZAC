@@ -32,7 +32,7 @@ define custom entity ZC_CA_TIMESHEET_RES
 //    @UI : { selectionField : [ { position: 40 } ]}
 //    @EndUserText.label: 'Data Apropriação'    
 //    @Consumption.filter.selectionType: #INTERVAL
-//    DtApropriacao2: abap.dats;            
+//    DtApropriacao: abap.dats;            
     @UI : { lineItem      : [ { position: 45 } ]}
     @EndUserText.label: 'HH Total'       
     hhTotal : abap.char( 10 );
