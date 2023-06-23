@@ -78,6 +78,7 @@ CLASS ZCLCA_TIMESHEET_RESUMO IMPLEMENTATION.
         ls_result-d04 = ls_result-d03 = ls_result-d02 =
         ls_result-d01 = ls_result-d31 = ls_result-d30 =
         ls_result-d29 = ls_result-d28 = ls_result-d27 = ls_result-d26 = '00:00:00'.
+        ls_result-dtapro = gs_range-dtapro[ 1 ]-low.
         "APPEND ls_result TO lt_result.
         COLLECT ls_result INTO lt_result.
       ENDLOOP.
@@ -267,7 +268,7 @@ CLASS ZCLCA_TIMESHEET_RESUMO IMPLEMENTATION.
         WHEN 'USUARIO'.
           gs_range-usuario = VALUE #( BASE gs_range-usuario ( LINES OF <fs_filters>-range ) ).
 
-        WHEN 'DTAPROPRIACAO'.
+        WHEN 'DTAPRO'.
           gs_range-dtapro = VALUE #( BASE gs_range-dtapro ( LINES OF <fs_filters>-range ) ).
 
         WHEN OTHERS.

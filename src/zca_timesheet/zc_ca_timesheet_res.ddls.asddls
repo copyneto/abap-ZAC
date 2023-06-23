@@ -28,11 +28,10 @@ define custom entity ZC_CA_TIMESHEET_RES
     @EndUserText.label: 'Usuário'        
     @Consumption.valueHelpDefinition: [ { entity:  { name: 'ZI_CA_VH_TIMESHEET_USUARIO', element: 'Usuario' } }]
     key Usuario: abap.char( 250 );
-//    @UI : { lineItem      : [ { position: 40 } ]}
-//    @UI : { selectionField : [ { position: 40 } ]}
-//    @EndUserText.label: 'Data Apropriação'    
-//    @Consumption.filter.selectionType: #INTERVAL
-//    DtApropriacao: abap.dats;            
+    @UI : { selectionField : [ { position: 40 } ]}
+    @EndUserText.label: 'Data Apropriação'    
+    @Consumption.filter.selectionType: #INTERVAL
+    DtApro: abap.dats;            
     @UI : { lineItem      : [ { position: 45 } ]}
     @EndUserText.label: 'HH Total'       
     hhTotal : abap.char( 10 );
